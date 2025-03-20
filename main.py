@@ -2,14 +2,14 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, Trai
 from datasets import load_dataset
 import torch
 
-# Задаём имя предобученной модели (например, bert-base-uncased)
+# Задаём имя предобученной модели
 MODEL_NAME = "bert-base-uncased"
 
 # Загружаем модель и токенизатор
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, num_labels=2)
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
-# Загружаем датасет (пример с IMDb)
+# Загружаем датасет 
 dataset = load_dataset("imdb")
 
 def tokenize_function(examples):
